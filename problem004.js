@@ -1,16 +1,13 @@
 function largestPalindromeProduct(n) {
 
-  function isPalindroom(n) {
-    n = n.toString();
-    let nArr = n.split('');
-    let compArr = [];
-    do {
-      if (nArr.shift() !== nArr.pop()) {
-        return false;
+    function isPalindroom(n) {
+      n = n.toString();
+      let reverseN = n.split('').reverse().join('');
+      if (n == reverseN) {
+        return true;
       }
-    } while (nArr.length > 1) 
-    return true;
-  }
+      return false;
+    }
 
   let intStr = '';
   for (let i = 0; i < n; i++) {
